@@ -9,14 +9,14 @@ sleep 10
 echo "ELECTRA_ADDRESS=$ADDRESS"
 
 # Import the address
-electra-cli importaddress $ADDRESS
+/app/bin/electra-cli importaddress $ADDRESS
 
 # Generate enough block to pass the maturation time
-electra generatetoaddress 101 $ADDRESS
+/app/bin/electra-cli setgenerate true 101
 
 # Simulate mining
 while :
 do
-    electra-cli generatetoaddress 1 $ADDRESS
+    /app/bin/electra-cli setgenerate true 1
     sleep 10
 done

@@ -1,15 +1,12 @@
 FROM ubuntu:xenial
 
-RUN apt-get update && apt-get install --yes software-properties-common
-RUN apt-get install --yes curl
+RUN apt-get update --fix-missing && apt-get install --yes software-properties-common wget
 
-# bitcoind PPA is unmaintained, so we download it from the bitcoincore website.
-# This can sometimes stall, which can be fixed by killing and restarting the
-# build.
-RUN curl HTTP... 
+RUN wget https://github.com/Jenova7/dev_purpose/releases/download/2.1.3T/electra-2.1.3-x86_64-linux-gnu.tar.gz -O - | tar xz
+RUN mv ./electra-2.1.3 /app
 
-RUN chmod +x electrad
-RUN chmod +x electra-cli
+RUN chmod +x /app/bin/electrad
+RUN chmod +x /app/bin/electra-cli
 
 COPY Electra.conf /root/.electra/
 COPY run.sh /root/
