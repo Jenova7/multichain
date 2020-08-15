@@ -13,6 +13,7 @@ const (
 	BTC  = Asset("BTC")  // Bitcoin
 	DGB =  Asset("DGB")  // DigiByte
 	DOGE = Asset("DOGE") // Dogecoin
+	ECA  = Asset("ECA")  // Electra
 	ETH  = Asset("ETH")  // Ether
 	ZEC  = Asset("ZEC")  // Zcash
 )
@@ -44,6 +45,7 @@ const (
 	Bitcoin     = Chain("Bitcoin")
 	BitcoinCash = Chain("BitcoinCash")
 	DigiByte    = Chain("DigiByte")
+	Electra     = Asset("Electra")
 	Ethereum    = Chain("Ethereum")
 	Zcash       = Chain("Zcash")
 )
